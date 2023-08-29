@@ -1,5 +1,5 @@
 #!/usr/bin/php
-
+<?php
 //Nagios Exit Codes
 $OK = "0";
 $WARNING = "1";
@@ -30,3 +30,4 @@ else {
 	echo ("Gitlab script is probably broken, it shouldn't have ever made it to this output.");
 	exit (3);
 }
+?>
