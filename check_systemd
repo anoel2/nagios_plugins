@@ -1,0 +1,28 @@
+#!/usr/bin/php
+<?php
+//for use with NRPE to check status of services. Define service with -s flag. 
+//Nagios Exit Codes
+$OK = 0;
+$WARNING = 1;
+$CRITICAL = 2;
+$UNKNOWN = 3;
+//
+$hostname = gethostname();
+//service
+$options = getopt("s:");
+$service = $options['s'];
+$output = exec("systemctl is-active $service");
+//print_r ($token);
+$OK_STR = "The service $service on $hostname is ok!";
+$WARN_STR = "Warning! $service on $hostname is in an Unhealthy Status!";
+$CRIT_STR = "CRITICAL! $service SERVICE DOWN on $hostname.";
+$UNK_STR = "Uh OH! Script is broken!";
+if (trim($output) == 'active') {
+        echo ($OK_STR);
+        exit ($OK);
+}
+else{
+        echo ($CRIT_STR);
+        exit ($CRITICAL);
+}
+?>
