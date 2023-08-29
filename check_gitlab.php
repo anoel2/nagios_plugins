@@ -1,5 +1,5 @@
 #!/usr/bin/php
-<?php
+
 //Nagios Exit Codes
 $OK = "0";
 $WARNING = "1";
