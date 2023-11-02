@@ -1,6 +1,6 @@
+#!/usr/bin/python3
 ##Make sure your reference document is located in a directory called /ref, that lives at the same level as this script.
 ##In ./ref, there should be a reference file that matches the exact expected output of the command being ran. In this case, /usr/bin/beegfs-check-servers
-#!/usr/bin/python3
 import subprocess
 import sys
 
